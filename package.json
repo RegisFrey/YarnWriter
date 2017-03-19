@@ -1,0 +1,9 @@
+{
+    "name": "YarnWriter",
+    "version": "0.1.0",
+    "description": "An experimental rebuild of the Yarn narrative editor with Vue2 and NPM.",
+    "main": "index.js",
+    "repository": "https://github.com/RegisFrey/YarnWriter",
+    "author": "Regis Frey",
+    "license": "MIT"
+}
