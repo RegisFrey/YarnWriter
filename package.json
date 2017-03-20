@@ -1,7 +1,7 @@
 {
     "name": "yarn-writer",
     "version": "0.0.0",
-    "description": "An experimental rebuild of the Yarn narrative editor with Vue2 and NPM.",
+    "description": "An experimental rebuild of the Yarn narrative editor with an electron/webpack stack",
     "scripts": {
         "build": "node tasks/release.js",
         "build:clean": "cross-env PLATFORM_TARGET=clean node tasks/release.js",
