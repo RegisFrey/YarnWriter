@@ -1,0 +1,19 @@
+v0.1.0
+---------
+1. Nodes render in a graph
+https://github.com/jsplumb/bower-jsplumb
+Cytoscape.js
+https://github.com/cytoscape/cytoscape.js
+JointJS
+https://github.com/clientIO/joint
+
+2. Node content can be edited:
+ace for editor? used in original Yarn
+https://github.com/ajaxorg/ace
+(borrow config and syntax highlights from original Yarn)
+example:
+https://github.com/mockaroo/charmcity-electron
+
+v0.2.0
+---------
+3.
