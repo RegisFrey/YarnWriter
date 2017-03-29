@@ -1,7 +1,7 @@
 <template>
     <div>
-        <node></node>
-        <node></node>
+        <node id="node1" style="top: 600px;left: 160px;"></node>
+        <node id="node2"></node>
     </div>
 </template>
 
