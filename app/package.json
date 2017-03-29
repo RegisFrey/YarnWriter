@@ -4,6 +4,7 @@
     "description": "An experimental rebuild of the Yarn narrative editor with an electron/webpack stack",
     "main": "./dist/main.js",
     "dependencies": {
+        "brace": "^0.10.0",
         "vue": "^2.1.10",
         "vue-electron": "^1.0.6",
         "vue-router": "^2.1.2"
