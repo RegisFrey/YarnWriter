@@ -58,8 +58,5 @@
         "vue-template-compiler": "^2.1.10",
         "webpack": "^2.2.1",
         "webpack-dev-server": "^2.3.0"
-    },
-    "dependencies": {
-        "vue2-ace-editor": "https://github.com/markussom/vue2-ace-editor.git"
     }
 }

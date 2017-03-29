@@ -1,11 +1,12 @@
 <template>
-  <div id="#app">
-    <router-view></router-view>
+  <div class="splash">
+      
   </div>
 </template>
 
 <script>
   export default {
+
   };
 </script>
 
