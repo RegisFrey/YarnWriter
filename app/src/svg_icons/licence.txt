@@ -1,0 +1,2 @@
+Trash and Gear icons derived from Element UI https://github.com/elemefe
+That project, like this one is MIT licensed.

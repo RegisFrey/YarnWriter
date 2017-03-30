@@ -1,17 +1,12 @@
 import Vue from 'vue';
 import Electron from 'vue-electron';
 import Router from 'vue-router';
+import SvgIcon from 'vue-svgicon';
 
 import App from './App';
 import routes from './routes';
 
-import VueMaterial from 'vue-material';
-import 'vue-material/dist/vue-material.css';
-Vue.use(VueMaterial);
-// Vue.use(VueMaterial.MdCore);
-// Vue.use(VueMaterial.MdInput);
-// Vue.use(VueMaterial.MdChips);
-
+Vue.use(SvgIcon);
 Vue.use(Electron);
 Vue.use(Router);
 Vue.config.debug = true;

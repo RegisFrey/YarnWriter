@@ -1,0 +1,5 @@
+require('./close')
+require('./delete')
+require('./info')
+require('./plus')
+require('./settings')

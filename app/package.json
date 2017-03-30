@@ -1,15 +1,15 @@
 {
-    "name": "yarn-writer",
-    "version": "0.0.0",
-    "description": "An experimental rebuild of the Yarn narrative editor with an electron/webpack stack",
-    "main": "./dist/main.js",
-    "dependencies": {
-        "brace": "^0.10.0",
-        "vue": "^2.1.10",
-        "vue-electron": "^1.0.6",
-        "vue-material": "^0.7.1",
-        "vue-router": "^2.1.2"
-    },
-    "devDependencies": {},
-    "author": "Regis Frey <RegisFrey@Darkfirestudios.com>"
+  "name": "yarn-writer",
+  "version": "0.0.0",
+  "description": "An experimental rebuild of the Yarn narrative editor with an electron/webpack stack",
+  "main": "./dist/main.js",
+  "dependencies": {
+    "brace": "^0.10.0",
+    "vue": "^2.1.10",
+    "vue-electron": "^1.0.6",
+    "vue-router": "^2.1.2",
+    "vue-svgicon": "^1.1.5"
+  },
+  "devDependencies": {},
+  "author": "Regis Frey <RegisFrey@Darkfirestudios.com>"
 }
