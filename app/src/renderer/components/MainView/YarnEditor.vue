@@ -26,8 +26,9 @@
   import '../YarnIcons/info';
 
   import * as ace from 'brace';
-  import 'brace/mode/javascript';
-  import 'brace/theme/monokai';
+  // import 'brace/mode/javascript';
+  // import 'brace/theme/monokai';
+  import 'yarn-brace';
 
   export default {
     data() {
@@ -51,8 +52,8 @@
     },
     mounted() {
       this.editor = ace.edit(this.$refs.editor);
-      this.editor.getSession().setMode('ace/mode/javascript');
-      this.editor.setTheme('ace/theme/monokai');
+      this.editor.getSession().setMode('ace/mode/yarn');
+      this.editor.setTheme('ace/theme/yarn');
     },
     ready() {
       window.addEventListener('resize', this.handleResize);
@@ -101,6 +102,7 @@
 
 .panel-content {
   flex: 1;
+  position: relative;
 }
 
 .yarn-editor-save-status {
@@ -125,8 +127,11 @@
   flex:1;
 }
 .yarn-editor-input{
-  min-height: 100px;
-  /* display: block; */
+  position: absolute; /* Added */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   height: 100%;
   width: 100%;
 }
