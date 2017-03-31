@@ -491,5 +491,5 @@ yargs@^6.6.0:
     yargs-parser "^4.2.0"
 
 "yarn-brace@https://github.com/RegisFrey/YarnAce#brace":
-  version "1.0.2"
-  resolved "https://github.com/RegisFrey/YarnAce#8a03d1fcd4d6ce987f6cf711a857ca65bd803cf3"
+  version "1.0.3"
+  resolved "https://github.com/RegisFrey/YarnAce#0fa06f55b7cc0833b98a49b3fde50d518c719df4"
