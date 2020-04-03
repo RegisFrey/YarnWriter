@@ -1,6 +1,6 @@
 module.exports = {
 	// set your styleguidist configuration here
-	title: 'Default Style Guide',
+  title: 'Yarn Writer Components',
 	// components: 'src/components/**/[A-Z]*.vue',
 	// defaultExample: true,
 	// sections: [
@@ -9,8 +9,6 @@ module.exports = {
 	//     components: 'src/components/**/[A-Z]*.vue'
 	//   }
 	// ],
-	// webpackConfig: {
-	//   // custom config goes here
-	// },
+  // webpackConfig: require('./node_modules/@vue/cli-service/webpack.config.js'),
 	exampleMode: 'expand'
 }

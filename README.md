@@ -25,5 +25,11 @@ yarn test
 yarn lint
 ```
 
+### Styleguide
+```
+yarn styleguide # for development
+yarn styleguide:build # for release (e.g. github pages)
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
