@@ -1,5 +1,8 @@
 {
   "name": "yarn-writer",
+  "author": "Regis Frey <RegisFrey@Darkfirestudios.com>",
+  "description": "An alternative yarn story editor built on modern, clean, well documented code and a cleaner design system. Using monaco instead of ace, electron instead of nw.js, and vue instead of knockout.",
+  "license": "MIT",
   "version": "0.1.0",
   "private": true,
   "scripts": {
