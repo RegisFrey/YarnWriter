@@ -2,7 +2,7 @@
 
 .wr-theme, .wr-theme--light {
     font-family: $font-family-system;
-    // -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    /* -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
@@ -29,7 +29,7 @@
         --color-fg: var(--color-tint-purple);
         --color-fg-raised: var(--color-tint-purple);
         --color-fg-inset: hsl(275, 35%, 68%);
-        // --color-fg-text: hsl(292, 71%, 96%);
+        /* --color-fg-text: hsl(292, 71%, 96%); */
     }
     --color-tint-red: hsl(3, 88%, 81%);
     .wr-theme-tint--red {
@@ -81,7 +81,7 @@
         --color-fg: var(--color-tint-pink);
         --color-fg-raised: hsl(317, 66%, 36%);
         --color-fg-border: var(--color-fg-raised);
-        --color-fg-inset: var(--color-fg-raised); //hsl(317, 66%, 26%);
+        --color-fg-inset: var(--color-fg-raised); /* hsl(317, 66%, 26%); */
     }
     --color-tint-purple: hsl(275, 69%, 47%);
     .wr-theme-tint--purple {
@@ -101,7 +101,7 @@
     .wr-theme-tint--green {
         --color-fg: var(--color-tint-green);
         --color-fg-raised: hsl(142, 90%, 29%);
-        // --color-fg-text: hsl(142, 90%, 10%);
+        /* --color-fg-text: hsl(142, 90%, 10%); */
         --color-fg-text: hsl(143, 84%, 94%);
         --color-fg-border: var(--color-fg-raised);
         --color-fg-inset: var(--color-fg-raised);
