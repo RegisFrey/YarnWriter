@@ -21,7 +21,9 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  mode: 'hash' // process.env.IS_ELECTRON ? 'hash' : 'history',
+  /* https://nklayman.github.io/vue-cli-plugin-electron-builder/guide/commonIssues.html#blank-screen-on-builds-but-works-fine-on-serve */
 })
 
 export default router
