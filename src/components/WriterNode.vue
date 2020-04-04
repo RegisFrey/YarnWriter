@@ -24,14 +24,14 @@ import IconPalette from 'vue-material-design-icons/Palette.vue'
 import IconDots from 'vue-material-design-icons/DotsVertical.vue'
 import IconPencil from 'vue-material-design-icons/Pencil.vue'
 
-// import WriterTag from '@/components/WriterTag.vue'
+import WriterTag from '@/components/WriterTag.vue'
 
 /**
  * Nodes to organize story chunks, visualize linkages
  */
 export default Vue.extend({
   components: {
-    // WriterTag
+    WriterTag,
     IconTrash,
     IconPalette,
     IconDots,
