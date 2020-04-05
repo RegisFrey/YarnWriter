@@ -1,10 +1,12 @@
 <template>
   <div id="app">
     <Workspace />
-    <Welcome v-show="showing.welcome"/>
-    <Settings v-show="showing.settings"/>
-    <Guide v-show="showing.guide"/>
-    <History v-show="showing.history"/>
+    <Welcome v-show="!documentWindow.welcomeDismissed" v-on:dismiss-welcome="dismissWelcome"/>
+
+    <Welcome v-show="false"/>
+    <Settings v-show="false"/>
+    <Guide v-show="false"/>
+    <History v-show="false"/>
   </div>
 </template>
 
@@ -15,6 +17,7 @@ import Welcome from '@/views/Welcome.vue'
 import Settings from '@/views/Settings.vue'
 import Guide from '@/views/Guide/Index.vue'
 import History from '@/views/History.vue'
+import { WriterDocumentWindow } from './types/Window'
 
 export default Vue.extend({
   name: 'App',
@@ -26,8 +29,13 @@ export default Vue.extend({
     History
   },
   computed: {
-    showing () {
-      return this.$store.direct.state.windows.showing
+    documentWindow () {
+      return this.$store.direct.state.windows.openWindows[0] as WriterDocumentWindow
+    }
+  },
+  methods: {
+    dismissWelcome () {
+      this.$store.direct.commit.dismissWelcome(0)
     }
   }
 })

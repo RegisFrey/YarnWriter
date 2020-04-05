@@ -18,7 +18,7 @@
             <WriterRecentFile name="Other.yarn" path="/Users/example/⁨Dev/BFFClub⁨/⁨Assets/⁨Story⁩/"/>
             <WriterRecentFile name="a-third-thing.yarn" path="/Users/example/⁨Dev/BFFClub⁨/⁨Assets/⁨Story⁩/"/>
           </div>
-          <button class="welcome__new-file" v-on:click="openNew">Start a New File</button>
+          <button class="welcome__new-file" v-on:click="$emit('dismiss-welcome')">Start a New File</button>
       </section>
 
       <section class="welcome__guides">
@@ -50,13 +50,7 @@ import WriterRecentFile from '@/components/WriterRecentFile'
 
 export default {
   name: 'Welcome',
-  components: { IconFile, IconUnity, IconEarth, WriterRecentFile },
-  methods: {
-    openNew () {
-      console.log('openNew called')
-      this.$store.dispatch('openDocument')
-    }
-  }
+  components: { IconFile, IconUnity, IconEarth, WriterRecentFile }
 }
 </script>
 

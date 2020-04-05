@@ -1,6 +1,6 @@
-import Vue from "vue"
-import Vuex from "vuex"
-import { createDirectStore } from "direct-vuex"
+import Vue from 'vue'
+import Vuex from 'vuex'
+import { createDirectStore } from 'direct-vuex'
 import windows from './windows'
 
 Vue.use(Vuex)
@@ -13,6 +13,9 @@ const {
   moduleGetterContext
 } = createDirectStore({
   // … store implementation here …
+  state: {
+    inElectron: ('process' in global && 'versions' in global.process && 'electron' in global.process.versions)
+  },
   modules: {
     windows
   }
@@ -32,8 +35,8 @@ export {
 
 // The following lines enable types in the injected store '$store'.
 export type AppStore = typeof store
-declare module "vuex" {
+declare module 'vuex' {
   interface Store<S> {
-    direct: AppStore
+    direct: AppStore;
   }
 }
