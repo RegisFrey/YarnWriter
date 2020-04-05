@@ -8,6 +8,6 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
-  store,
+  store: store.original, // Inject the classic Vuex store. (instead of direct-vuex typed wrapper)
   render: h => h(App)
 }).$mount('#app')

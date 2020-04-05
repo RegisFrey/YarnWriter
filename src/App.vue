@@ -27,7 +27,7 @@ export default Vue.extend({
   },
   computed: {
     showing () {
-      return this.$store.state.showing
+      return this.$store.direct.state.windows.showing
     }
   }
 })

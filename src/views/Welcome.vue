@@ -75,6 +75,7 @@ export default {
   border-radius: 8px;
   overflow: hidden;
   border: 2px solid #FFF;
+  z-index: 100;
 
   h1 {
     font-size: 32px;
