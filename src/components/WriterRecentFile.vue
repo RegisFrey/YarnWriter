@@ -63,9 +63,9 @@ export default {
   overflow: hidden;
   padding: 4px 4px;
   // border-top: 1px solid rgb(211, 213, 216);
-      border: 1px solid rgb(211, 213, 216);
-border-radius: 6px;
-margin-bottom: 4px;
+  border: 1px solid rgb(211, 213, 216);
+  border-radius: 6px;
+  margin-bottom: 4px;
 
   &:hover {
     background-color: rgb(212, 241, 254);

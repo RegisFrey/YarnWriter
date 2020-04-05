@@ -13,7 +13,7 @@ import Vue from 'vue'
 import Workspace from '@/views/Workspace.vue'
 import Welcome from '@/views/Welcome.vue'
 import Settings from '@/views/Settings.vue'
-import Guide from '@/views/Guide.vue'
+import Guide from '@/views/Guide/Index.vue'
 import History from '@/views/History.vue'
 
 export default Vue.extend({
