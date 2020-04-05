@@ -1,44 +1,45 @@
 <template>
   <div id="app">
     <Workspace />
-    <Settings v-show="false"/>
-    <Welcome v-show="false"/>
-    <Guide v-show="false"/>
-    <History v-show="false"/>
+    <Welcome v-show="showing.welcome"/>
+    <Settings v-show="showing.settings"/>
+    <Guide v-show="showing.guide"/>
+    <History v-show="showing.history"/>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import Workspace from '@/components/Workspace.vue'
-import Settings from '@/components/Settings.vue'
-import Guide from '@/components/Guide.vue'
-import History from '@/components/History.vue'
+import Workspace from '@/views/Workspace.vue'
+import Welcome from '@/views/Welcome.vue'
+import Settings from '@/views/Settings.vue'
+import Guide from '@/views/Guide.vue'
+import History from '@/views/History.vue'
 
 export default Vue.extend({
   name: 'App',
   components: {
     Workspace,
+    Welcome,
     Settings,
     Guide,
     History
   },
-  data () {
-    return {
-      showing: {
-        welcome: true,
-        settings: false
-      }
+  computed: {
+    showing () {
+      return this.$store.state.showing
     }
   }
 })
 </script>
 
-<style>
-@import './reset.css';
-@import './main.scss';
+<style lang="scss">
+@import '~./reset.css';
+@import '~./main.scss';
 
-#app {
+html, body, #app {
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
   top: 0;
@@ -46,5 +47,7 @@ export default Vue.extend({
   right: 0;
   bottom: 0;
   overflow: hidden;
+
+  @include lightTheme;
 }
 </style>

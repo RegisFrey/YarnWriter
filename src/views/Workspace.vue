@@ -1,6 +1,6 @@
 <template>
   <div class="workspace">
-    <WriterPegboard>
+    <WriterPegboard class="workspace__pegboard">
     </WriterPegboard>
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style>
-.workspace {
+.workspace, .workspace__pegboard {
   width: 100%;
   height: 100%;
   top: 0;
