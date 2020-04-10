@@ -21,17 +21,11 @@ export default {}
 </style>
 
 <docs>
-```jsx
-let darkMode = false;
-<label>
-  <input type="checkbox" v-model="darkMode" />
-  Dark Mode
-</label>
-
-<div class="wr-theme" v-bind:class="{ 'wr-theme--light': !darkMode, 'wr-theme--dark': darkMode }">
-  <writer-pegboard style="width: 400px; height: 400px;">
+```js
+<WriterThemeContext show-toggle>
+  <writer-pegboard style="width: 400px; height: 150px;">
     Hello World
   </writer-pegboard>
-</div>
+</WriterThemeContext>
 ```
 </docs>

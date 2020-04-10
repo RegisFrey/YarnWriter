@@ -112,14 +112,8 @@ export default Vue.extend({
 </style>
 
 <docs>
-```jsx
-let darkMode = false;
-<label>
-  <input type="checkbox" v-model="darkMode" />
-  Dark Mode
-</label>
-
-<div class="wr-theme" v-bind:class="{ 'wr-theme--light': !darkMode, 'wr-theme--dark': darkMode }">
+```js
+<WriterThemeContext show-toggle>
   <writer-pegboard style="padding: 20px;">
     <writer-node title="Start" summary="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non." />
     <writer-node title="Fight Scene" />
@@ -131,8 +125,7 @@ let darkMode = false;
     <writer-node title="Blue" color="blue" v-bind:tags="['Sample Tag']" />
     <writer-node title="Green" color="green" v-bind:tags="['Sample Tag']" />
     <writer-node title="Yellow" color="yellow" v-bind:tags="['Sample Tag']" />
-
   </writer-pegboard>
-</div>
+</WriterThemeContext>
 ```
 </docs>

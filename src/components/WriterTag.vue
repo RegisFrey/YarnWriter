@@ -30,14 +30,8 @@ export default {
 
 <docs>
 ```jsx
-let darkMode = false;
-<label>
-  <input type="checkbox" v-model="darkMode" />
-  Dark Mode
-</label>
-
-<div class="wr-theme" v-bind:class="{ 'wr-theme--light': !darkMode, 'wr-theme--dark': darkMode }">
+<WriterThemeContext show-toggle>
   <writer-tag title="fight scene" /> <writer-tag title="home" /> <writer-tag title="other" />
-</div>
+</WriterThemeContext>
 ```
 </docs>
