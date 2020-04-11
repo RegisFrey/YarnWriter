@@ -19,7 +19,7 @@ export const focusedWindow: BrowserWindow | null = null
 /**
  * attach to BrowserWindow `beforeunload` event
  */
-export function onWindowWillClose (event:{ preventDefault:Function, sender:BrowserWindow }) {
+export function onWindowWillClose (event: { preventDefault: Function; sender: BrowserWindow }) {
   // console.log('onWindowWillClose', event)
   // TODO: use the dialog API to ask if unsaved changes
   // dialog.showMessageBox([browserWindow, ]options[, callback])
@@ -28,7 +28,7 @@ export function onWindowWillClose (event:{ preventDefault:Function, sender:Brows
 /**
  * attach to BrowserWindow `close` event
  */
-export function onWindowClosed (event:{ sender:BrowserWindow }) {
+export function onWindowClosed (event: { sender: BrowserWindow }) {
   // console.log('onWindowWillClose', event)
   // Stop tracking, remove from array
   const index = windows.findIndex(w => w === event.sender)

@@ -52,7 +52,7 @@ export async function onReady () {
   // register keys
   globalShortcut.register('CommandOrControl+N', () => {
     openWindow(WriterWindowType.Document)
-  });
+  })
   // open a document
   openWindow(WriterWindowType.Document)
 }

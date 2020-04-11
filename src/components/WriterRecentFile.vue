@@ -71,11 +71,6 @@ export default {
     background-color: rgb(212, 241, 254);
     border: 1px solid rgba(#217ED4, 0.4);
   }
-
-  &:last-of-type {
-    // border-bottom: 1px solid rgb(211, 213, 216);
-  }
-  // :focus default outline works well for now
 }
 .wr-recent-file__meta {
   display: flex;
@@ -105,7 +100,7 @@ export default {
 </style>
 
 <docs>
-```jsx
+```js
 <WriterRecentFile name="Example.yarn" path="/Users/example/⁨Dev/BFFClub⁨/⁨Assets/⁨Story⁩/"/>
 ```
 </docs>
