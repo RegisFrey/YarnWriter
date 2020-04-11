@@ -1,20 +1,23 @@
 <template>
   <div class="wr-editor">
-    <h1>{{ title }}</h1>
+    <h1>{{ title }}</h1> <!-- TODO: Edit in place text, warnings on collision -->
     <div class="wr-editor__tags">
-      <button><i class="fas fa-plus"></i></button>
-      <writer-tag v-for="tag in tags" v-bind:key="tag" v-bind:title="tag" />
+      <!-- TODO: Tag Editor -->
     </div>
-    <vue-monaco class="wr-editor__editor" v-bind:value="value" />
+    <div class="wr-editor__editor" ref="monaco" />
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 // import VueMonaco from "vue-monaco";
+import { setupMonacoEditor } from '@/editor/monaco'
+import * as monaco from 'monaco-editor'
+
 /**
  * Editor to edit node content or whole story file
  */
-export default {
+export default Vue.extend({
   // components: { VueMonaco },
   props: {
     title: {
@@ -29,9 +32,24 @@ export default {
     tags: {
       type: String,
       default: ''
+    },
+    options: {
+      type: Object,
+      default () {
+        return {
+
+        }
+      }
     }
+  },
+  mounted () {
+    const monacoOptions: monaco.editor.IStandaloneEditorConstructionOptions = {
+      lineNumbers: 'off',
+      minimap: { enabled: false }
+    };
+    (this.$options as any).editor = setupMonacoEditor((this.$refs.monaco as HTMLElement), this.value, monacoOptions) // eslint-disable-line
   }
-}
+})
 </script>
 
 <style>
@@ -45,15 +63,11 @@ export default {
 </style>
 
 <docs>
-```jsx
-let darkMode = false;
-<label>
-  <input type="checkbox" v-model="darkMode" />
-  Dark Mode
-</label>
+```js
+import placeholder from '@/editor/sample.yarn'
 
-<div class="wr-theme" v-bind:class="{ 'wr-theme--light': !darkMode, 'wr-theme--dark': darkMode }">
-  <writer-editor title="fight scene" value="lorem ipsum" style="height: 400px;" />
-</div>
+<WriterThemeContext show-toggle>
+  <writer-editor title="fight scene" v-bind:value="placeholder" style="height: 400px;" />
+</WriterThemeContext>
 ```
 </docs>
