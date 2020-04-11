@@ -168,3 +168,13 @@ export default {
     font-weight: bold;
 }
 </style>
+
+<docs>
+```js
+<WriterThemeContext show-toggle>
+  <WriterPegboard style="padding:20px; position: relative; height:600px;">
+    <Welcome />
+  </WriterPegboard>
+</WriterThemeContext>
+```
+</docs>

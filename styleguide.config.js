@@ -1,4 +1,4 @@
-import path from 'path'
+const path = require('path') // eslint-disable-line @typescript-eslint/no-var-requires
 
 module.exports = {
   // set your styleguidist configuration here
@@ -8,13 +8,19 @@ module.exports = {
     path.join(__dirname, 'src/main.scss')
   ],
   // components: 'src/components/**/[A-Z]*.vue',
-  // defaultExample: true,
-  // sections: [
-  //   {
-  //     name: 'First Section',
-  //     components: 'src/components/**/[A-Z]*.vue'
-  //   }
-  // ],
+  defaultExample: true,
+  sections: [
+    {
+      name: 'Components',
+      components: 'src/components/**/[A-Z]*.vue'
+    },
+    {
+      name: 'Views',
+      components: 'src/views/**/[A-Z]*.vue'
+    }
+  ],
   // webpackConfig: require('./node_modules/@vue/cli-service/webpack.config.js'),
-  exampleMode: 'expand'
+  exampleMode: 'expand',
+  // skipComponentsWithoutExample: false // , // WriterThemeContext
+  simpleEditor: true
 }
