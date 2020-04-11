@@ -8,7 +8,7 @@ module.exports = {
     path.join(__dirname, 'src/main.scss')
   ],
   // components: 'src/components/**/[A-Z]*.vue',
-  defaultExample: true,
+  defaultExample: false,
   sections: [
     {
       name: 'Components',
@@ -21,6 +21,6 @@ module.exports = {
   ],
   // webpackConfig: require('./node_modules/@vue/cli-service/webpack.config.js'),
   exampleMode: 'expand',
-  // skipComponentsWithoutExample: false // , // WriterThemeContext
+  skipComponentsWithoutExample: true, // WriterThemeContext
   simpleEditor: true
 }
