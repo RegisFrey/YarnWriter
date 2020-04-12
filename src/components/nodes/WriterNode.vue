@@ -3,9 +3,7 @@
     <h2 class="wr-node__title">
       <IconDots />
       {{ title }}
-      <IconPencil />
       <IconTrash />
-      <IconPalette />
     </h2>
     <div class="wr-node__summary">
       {{ summary }}
@@ -20,9 +18,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import IconTrash from 'vue-material-design-icons/TrashCanOutline.vue'
-import IconPalette from 'vue-material-design-icons/Palette.vue'
 import IconDots from 'vue-material-design-icons/DotsVertical.vue'
-import IconPencil from 'vue-material-design-icons/Pencil.vue'
 
 import WriterTag from '@/components/formatting/WriterTag.vue'
 
@@ -33,9 +29,7 @@ export default Vue.extend({
   components: {
     WriterTag,
     IconTrash,
-    IconPalette,
-    IconDots,
-    IconPencil
+    IconDots
   },
   props: {
     /**
