@@ -10,16 +10,23 @@
         <!-- metadata? # of refs. # of words? -->
         <button class="wr-editor__btn-close"><IconClose /></button>
       </section>
-      <section class="wr-editor__tags">
-        <!-- TODO: Tag Editor -->
-      </section>
+
     </header>
-    <div class="wr-editor__editor" ref="monaco" />
+    <div class="wr-editor__editor" ref="monaco" v-resize:throttle="onResize" />
+    <footer class="wr-editor__tags">
+        <vue-tags-input
+          v-model="tag"
+          :tags="tags"
+          @tags-changed="newTags => tags = newTags"
+        />
+    </footer>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import VueTagsInput from '@johmun/vue-tags-input'
+import resize from 'vue-resize-directive'
 // import VueMonaco from "vue-monaco";
 import { setupMonacoEditor } from '@/editor/monaco'
 import * as monaco from 'monaco-editor'
@@ -30,7 +37,8 @@ import IconClose from 'vue-material-design-icons/Close.vue'
  * Editor to edit node content or whole story file
  */
 export default Vue.extend({
-  components: { IconMore, IconClose },
+  components: { IconMore, IconClose, VueTagsInput },
+  directives: { resize },
   props: {
     // v-model
     title: {
@@ -42,10 +50,10 @@ export default Vue.extend({
       type: String,
       default: ''
     },
-    tags: {
-      type: String,
-      default: ''
-    },
+    // tags: {
+    //  type: String,
+    //  default: ''
+    // },
     options: {
       type: Object,
       default () {
@@ -55,14 +63,27 @@ export default Vue.extend({
       }
     }
   },
-  mounted () {
+  data () {
+    return {
+      tag: '',
+      tags: []
+    }
+  },
+  methods: {
+    onResize () {
+      if ('editor' in this.$options) {
+        (this.$options as any).editor.layout() // eslint-disable-line
+      }
+    }
+  },
+  async mounted () {
     const monacoOptions: monaco.editor.IStandaloneEditorConstructionOptions = {
       // lineNumbers: 'off',
       // minimap: { enabled: false }
       // turn off when text all fits on screen, when under X width, and by global setting
       // local editor settings like hard wrapping per window
     };
-    (this.$options as any).editor = setupMonacoEditor((this.$refs.monaco as HTMLElement), this.value, monacoOptions) // eslint-disable-line
+    (this.$options as any).editor = await setupMonacoEditor((this.$refs.monaco as HTMLElement), this.value, monacoOptions) // eslint-disable-line
   }
 })
 </script>
@@ -86,6 +107,7 @@ export default Vue.extend({
 
 .wr-editor__editor {
   flex: 1;
+  min-height: 40px; // needed to allow flex to collapse
   .minimap {
     border-left: 1px solid var(--color-bg);
   }
@@ -113,7 +135,7 @@ $header-bottom-border-size: 1px;
   }
 }
 .wr-editor__btn-more {
-  width: $editor-left-margin-numbers + 16px;
+  width: $editor-left-margin-numbers + 16px - 4px;
   text-align: right;
   padding-right: 8px;
   align-content: flex-end;
@@ -124,7 +146,7 @@ $header-bottom-border-size: 1px;
 .wr-editor__title {
   flex: 1;
   input {
-    padding: 4px;
+    padding: 8px 16px;
     font-size: 18px;
     width: 100%;
   }
@@ -134,6 +156,62 @@ $header-bottom-border-size: 1px;
   border-top-right-radius: 6px;
   margin-left: -1px;
   color: hsl(218, 55%, 49%);
+}
+
+.wr-editor__tags {
+  // padding-left: $editor-left-margin-numbers + 16px - 8px;
+  border-top: $header-bottom-border-size solid var(--color-bg-inset);
+  flex: 1;
+  flex-grow: 0;
+  flex-shrink: 0;
+  display: flex;
+  .vue-tags-input {
+    flex: 1;
+    max-width: none;
+    background-color: transparent;
+    border-color: transparent;
+    margin-top: -1px;
+    border: 1px solid transparent;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    &.ti-focus {
+      outline: none;
+      border: 1px solid hsl(218, 64%, 75%);
+      background-color: hsla(215, 100%, 91%, 0.25);
+    }
+  }
+  .ti-input, .ti-new-tag-input-wrapper {
+    border: none;
+    background-color: transparent;
+  }
+  .ti-new-tag-input {
+    background-color: transparent;
+    // height: 16px; // avoid heights changing when adding tags, this # was taken from computed
+  }
+  /* other tag styles in WriterTag.vue */
+  .ti-tag, .ti-new-tag-input {
+    padding: 4px 8px;
+    margin-right: 4px;
+    font-size: 12px;
+    display: block;
+    display: flex;
+    box-sizing: border-box;
+    line-height: 12px;
+  }
+  .ti-tag {
+    background-color: var(--color-fg-inset) !important; /* important due to scope issue https://github.com/JohMun/vue-tags-input/issues/110 */
+    color: var(--color-fg-text) !important;
+    border-radius: 4px;
+    // font-size: 10px;
+  }
+  .ti-icon-close {
+    opacity: 0.35;
+    padding-left: 4px;
+  }
+  .ti-deletion-mark {
+    background-color: red !important;
+    color: white !important;
+  }
 }
 </style>
 

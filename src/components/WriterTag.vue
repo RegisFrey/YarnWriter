@@ -19,8 +19,10 @@ export default {
 </script>
 
 <style>
+
 .wr-tag {
   background-color: var(--color-fg-inset);
+  color: var(--color-fg-text);
   border-radius: 4px;
   font-size: 10px;
   padding: 4px 8px;
