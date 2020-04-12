@@ -38,13 +38,13 @@ export default {
   height: $size-control;
   width: $size-control;
   font-size: $size-control-font;
-  color: $color-control-text-light;
+  color: hsl(218, 55%, 49%);// $color-control-text-light;
   padding: 4px;
   margin: 8px 4px;
 
   border: 2px solid transparent;
   &:focus {
-    border: 2px solid blue;
+    border: 2px solid hsl(218, 55%, 49%);
     outline: none;
   }
   svg {
