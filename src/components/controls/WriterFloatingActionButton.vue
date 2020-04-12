@@ -9,7 +9,6 @@
 </template>
 
 <script>
-
 /**
  * Floating Action Button for top level actions shown over the Workspace.
  */
@@ -24,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~./shared.scss';
+@import '~@/tokens/shared.scss';
 
 .wr-btn-fab {
   display: flex;

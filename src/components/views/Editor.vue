@@ -27,8 +27,7 @@
 import Vue from 'vue'
 import VueTagsInput from '@johmun/vue-tags-input'
 import resize from 'vue-resize-directive'
-// import VueMonaco from "vue-monaco";
-import { setupMonacoEditor } from '@/editor/monaco'
+import { setupMonacoEditor } from '@/editor/monaco' // not using vue-monaco, instead using monaco directly
 import * as monaco from 'monaco-editor'
 import IconMore from 'vue-material-design-icons/DotsVertical.vue'
 import IconClose from 'vue-material-design-icons/Close.vue'
@@ -89,7 +88,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-@import '~./shared.scss';
+@import '~@/tokens/shared.scss';
 
 .wr-editor {
   display: flex;
@@ -221,7 +220,7 @@ import placeholder from '@/editor/sample.yarn'
 
 <WriterThemeContext show-toggle>
   <WriterPegboard style="height: 400px; padding: 8px; display: flex; flex-direction: column;">
-    <WriterEditor title="fight scene" v-bind:value="placeholder" style="flex: 1;"/>
+    <Editor title="fight scene" v-bind:value="placeholder" style="flex: 1;"/>
   </WriterPegboard>
 </WriterThemeContext>
 ```

@@ -12,11 +12,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import Workspace from '@/views/Workspace.vue'
-import Welcome from '@/views/Welcome.vue'
-import Settings from '@/views/Settings.vue'
-import Guide from '@/views/Guide/Index.vue'
-import History from '@/views/History.vue'
+import Workspace from '@/components/views/Workspace.vue'
+import Welcome from '@/components/views/Welcome.vue'
+import Settings from '@/components/views/Settings.vue'
+import Guide from '@/components/views/Guide/Index.vue'
+import History from '@/components/views/History.vue'
 import { WriterDocumentWindow } from './types/Window'
 
 export default Vue.extend({

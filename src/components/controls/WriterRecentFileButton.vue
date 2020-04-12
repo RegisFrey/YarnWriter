@@ -101,6 +101,6 @@ export default {
 
 <docs>
 ```js
-<WriterRecentFile name="Example.yarn" path="/Users/example/⁨Dev/BFFClub⁨/⁨Assets/⁨Story⁩/"/>
+<WriterRecentFileButton name="Example.yarn" path="/Users/example/⁨Dev/BFFClub⁨/⁨Assets/⁨Story⁩/"/>
 ```
 </docs>

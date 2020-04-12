@@ -14,9 +14,9 @@
       <section class="welcome__recents">
           <h2>Recent Files</h2>
           <div class="welcome__recents__list">
-            <WriterRecentFile name="Example.yarn" path="/Users/example/⁨Dev/⁨PalPet/⁨Assets/⁨Story⁩/"/>
-            <WriterRecentFile name="Other.yarn" path="/Users/example/⁨Dev/BFFClub⁨/⁨Assets/⁨Story⁩/"/>
-            <WriterRecentFile name="a-third-thing.yarn" path="/Users/example/⁨Dev/BFFClub⁨/⁨Assets/⁨Story⁩/"/>
+            <WriterRecentFileButton name="Example.yarn" path="/Users/example/⁨Dev/⁨PalPet/⁨Assets/⁨Story⁩/"/>
+            <WriterRecentFileButton name="Other.yarn" path="/Users/example/⁨Dev/BFFClub⁨/⁨Assets/⁨Story⁩/"/>
+            <WriterRecentFileButton name="a-third-thing.yarn" path="/Users/example/⁨Dev/BFFClub⁨/⁨Assets/⁨Story⁩/"/>
           </div>
           <button class="welcome__new-file" v-on:click="$emit('dismiss-welcome')">Start a New File</button>
       </section>
@@ -46,11 +46,11 @@
 import IconFile from 'vue-material-design-icons/FileDocumentOutline'
 import IconUnity from 'vue-material-design-icons/Unity'
 import IconEarth from 'vue-material-design-icons/Earth'
-import WriterRecentFile from '@/components/WriterRecentFile'
+import WriterRecentFileButton from '@/components/controls/WriterRecentFileButton'
 
 export default {
   name: 'Welcome',
-  components: { IconFile, IconUnity, IconEarth, WriterRecentFile }
+  components: { IconFile, IconUnity, IconEarth, WriterRecentFileButton }
 }
 </script>
 
@@ -150,6 +150,9 @@ export default {
 .welcome__guides a {
   display: block;
   padding: 4px;
+
+  align-items: center;
+  display: flex;
 }
 .welcome__new-file {
   /*

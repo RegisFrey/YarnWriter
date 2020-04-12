@@ -5,22 +5,36 @@ module.exports = {
   title: 'Yarn Writer Components',
   require: [
     path.join(__dirname, 'src/reset.css'),
-    path.join(__dirname, 'src/main.scss')
+    path.join(__dirname, 'src/main.scss'),
+    path.join(__dirname, 'src/styleguide.scss')
   ],
-  // components: 'src/components/**/[A-Z]*.vue',
   defaultExample: false,
+  pagePerSection: true,
   sections: [
     {
-      name: 'Components',
-      components: 'src/components/**/[A-Z]*.vue'
+      name: 'Controls',
+      components: 'src/components/controls/**/[A-Z]*.vue'
+    },
+    {
+      name: 'Formatting',
+      components: 'src/components/formatting/**/[A-Z]*.vue'
+    },
+    {
+      name: 'Layout',
+      components: 'src/components/layout/**/[A-Z]*.vue'
+    },
+    {
+      name: 'Nodes',
+      components: 'src/components/nodes/**/[A-Z]*.vue'
     },
     {
       name: 'Views',
-      components: 'src/views/**/[A-Z]*.vue'
+      components: 'src/components/views/**/[A-Z]*.vue'
     }
   ],
   // webpackConfig: require('./node_modules/@vue/cli-service/webpack.config.js'),
-  exampleMode: 'expand',
+  usageMode: 'collapse', // props, event, method, slot tables
+  exampleMode: 'collapse',
   skipComponentsWithoutExample: true, // WriterThemeContext
-  simpleEditor: true
+  simpleEditor: true //,
 }

@@ -23,12 +23,10 @@
 </template>
 
 <script>
-import WriterPegboard from '@/components/WriterPegboard.vue'
+import WriterPegboard from '@/components/layout/WriterPegboard.vue'
 import IconAdd from 'vue-material-design-icons/Plus' // PlusBoxOutline
 import IconMenu from 'vue-material-design-icons/Menu'
 import IconClose from 'vue-material-design-icons/Close'
-
-// import IconSearch from 'vue-material-design-icons/Magnify'
 import IconGuide from 'vue-material-design-icons/HelpCircleOutline'
 // import IconSettings from 'vue-material-design-icons/Settings' // Outline
 
