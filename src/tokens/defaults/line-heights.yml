@@ -1,0 +1,17 @@
+
+global:
+  type: number
+  category: line_height
+
+props:
+  line_height_match:
+    value: 1
+
+  line_height_tight:
+    value: 1.2
+
+  line_height_base:
+    value: 1.4
+
+  line_height_wide:
+    value: 2

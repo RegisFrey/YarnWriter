@@ -1,0 +1,50 @@
+
+global:
+  type: number
+  category: spacing
+
+props:
+  space_xs: 
+    value: 8px
+  space_s: 
+    value: 16px
+  space_m: 
+    value: 32px
+  space_l: 
+    value: 64px
+  space_xl: 
+    value: 128px
+
+  # 2px  xxxs
+  # 4px  xxs
+  # 8px  xs
+  # 12px s
+  # 16px m
+  # 20px l
+  # 28px xl
+  # 36px xxl
+  # 48px xxxl
+  # 72px xxxxl
+  # also, should these be aliases?
+
+  space_gap_xs: 
+    value: 2px
+  space_gap_s: 
+    value: 4px
+  space_gap_m: 
+    value: 8px
+  space_gap_l: 
+    value: 16px
+  space_gap_xl: 
+    value: 32px
+
+  # These and the alias tokens are sizing vs spacings
+  # e.g. size_control vs space_control
+  space_control_xs: 
+    value: 16px
+  space_control_s: 
+    value: 24px
+  space_control_m: 
+    value: 48px
+  space_control_l: 
+    value: 64px

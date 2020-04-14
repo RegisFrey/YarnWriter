@@ -6,15 +6,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "## WEB": "",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
+    "## ELECTRON": "",
     "electron:build": "vue-cli-service electron:build",
     "electron:serve": "vue-cli-service electron:serve",
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps",
+    "## STYLEGUIDE": "",
     "styleguide": "vue-cli-service styleguidist",
-    "styleguide:build": "vue-cli-service styleguidist:build"
+    "styleguide:build": "vue-cli-service styleguidist:build",
+    "## TOKENS": "",
+    "tokens": "theo ./src/tokens/defaults/defaults.yml --transform web --format custom-properties.css --dest ./src/tokens/generated"
   },
   "dependencies": {
     "@johmun/vue-tags-input": "^2.1.0",
@@ -29,6 +34,7 @@
     "onigasm": "^2.2.4",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
+    "theo": "^8.1.5",
     "vue": "^2.6.11",
     "vue-material-design-icons": "^4.4.0",
     "vue-resize-directive": "^1.2.0",

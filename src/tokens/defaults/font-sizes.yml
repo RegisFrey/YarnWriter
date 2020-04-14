@@ -1,0 +1,29 @@
+global:
+  type: number
+  category: font-size
+
+aliases:
+  font-size-xs: 
+    value: 12px
+  font-size-s: 
+    value: 16px
+  font-size-m: 
+    value: 18px
+  font-size-l: 
+    value: 21px
+  font-size-xl: 
+    value: 32px
+
+props:
+  font-size-xs: 
+    value: "{!font-size-xs}"
+  font-size-s: 
+    value: "{!font-size-s}"
+  font-size-m: 
+    value: "{!font-size-m}"
+  font-size-l: 
+    value: "{!font-size-l}"
+  font-size-xl: 
+    value: "{!font-size-xl}"
+  font-size-control:
+    value: "{!font-size-l}"

@@ -1,0 +1,76 @@
+global:
+  type: color
+  category: color
+
+aliases:
+  color_white:
+    value: rgb(255, 255, 255)
+  color_off_white:
+    value: rgb(240, 240, 240)
+  color_grey:
+    value: rgb(111, 111, 111)
+  color_off_black:
+    value: rgb(46, 46, 46)
+  color_dark_blue:
+    value: hsl(218, 55%, 49%)
+  color_light_blue:
+    value: hsl(218, 64%, 75%)
+  color_lightest_blue:
+    value: hsl(218, 66%, 85%)
+
+props:
+
+  # Yarn Writer Colors
+  # Primarily for Welcome and Guide
+  color_identity:
+    value: "#3B8860"
+    comment: YarnSpinner brand color for logo lines and text
+  color_identity_bg: 
+    value: "#C6E19E" #C5E29B
+    comment: YarnSpinner brand color for lighter background fill
+  color_identity_border:
+    value: "#92B491"
+    comment: YarnSpinner brand color for mid tone border
+
+  # Basics
+  color_bg:
+    value: rgb(237, 241, 247)
+    comment: Background element
+  color_bg_inset:
+    value: rgb(211, 220, 234)
+    comment: Background inset parts, e.g. the holes in the pegboard
+
+  color_fg:
+    value: "{!color_white}"
+    comment: Foreground UI elements, e.g. panels.
+  color_fg_border:
+    value: "{!color_grey}"
+    comment: Foreground UI element borders, e.g. panel dividers.
+
+  color_fg_text:
+    value: "{!color_off_black}"
+    comment: Default text color.
+  color_fg_text_light:
+    value: "{!color_grey}"
+    comment: Demphasized text.
+
+  color_shadow:
+    value: "rgba(46, 46, 66, 0.24)" # rgba(95, 97, 121, 0.4)
+    comment: Shadow for regular raised elements.
+  color_shadow_dark:
+    value: "rgba(54, 54, 80, 0.4)"
+    comment: Shadow for higher raised elements, like focused nodes.
+
+  # Controls
+  color_interactive:
+    value: "{!color_dark_blue}"
+    comment: Interactive controls. Button icons. Link text. Focus outlines and other interactive indicators.
+  color_interactive_focus_bg:
+    value: "{!color_lightest_blue}"
+    comment: Background of interactive elements when focused.
+  color_interactive_light:
+    value: "{!color_light_blue}"
+    comment: Interactive controls meant to invite interaction but also be less emphasized, e.g. placeholder, secondary controls.
+  color_interactive_disabled:
+    value: "{!color_grey}"
+    comment: Disabled controls.

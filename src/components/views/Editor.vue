@@ -88,14 +88,15 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-@import '~@/tokens/shared.scss';
+@import '~@/tokens/mixins.scss';
 
 .wr-editor {
   display: flex;
   flex-direction: column;
   border-radius: 6px;
   overflow: hidden;
-  @include floating;
+  background-color: var(--color-fg);
+  @include shadow;
 }
 
 .wr-editor__header {

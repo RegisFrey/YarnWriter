@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~@/tokens/shared.scss';
+@import '~@/tokens/mixins.scss';
 
 .wr-btn-fab {
   display: flex;
@@ -31,19 +31,20 @@ export default {
   align-items: center;
   justify-content: center;
 
-  @include floating;
+  background-color: var(--color-fg);
+  @include shadow;
 
-  border-radius: $size-control/2;
-  height: $size-control;
-  width: $size-control;
-  font-size: $size-control-font;
-  color: hsl(218, 55%, 49%);// $color-control-text-light;
+  border-radius: calc(var(--space-control-m) / 2);
+  height: var(--space-control-m);
+  width: var(--space-control-m);
+  font-size: var(--font-size-control);
+  color: var(--color-interactive);
   padding: 4px;
   margin: 8px 4px;
 
-  border: 2px solid transparent;
+  border: var(--line-weight-m) solid transparent;
   &:focus {
-    border: 2px solid hsl(218, 55%, 49%);
+    border: var(--line-weight-m) solid var(--color-interactive);
     outline: none;
   }
   svg {

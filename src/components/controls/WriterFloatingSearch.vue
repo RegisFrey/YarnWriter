@@ -57,24 +57,22 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~@/tokens/shared.scss';
+@import '~@/tokens/mixins.scss';
 
 .wr-floating-search {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  // justify-content: center;
 
-  @include floating;
+  background-color: var(--color-fg);
+  @include shadow;
 
-  border-radius: $size-control/2;
-  height: $size-control;
-  // width: $size-control;
-  font-size: $size-control-font;
-  // padding: 4px;
+  border-radius: calc(var(--space-control-m) / 2);
+  height: var(--space-control-m);
+  font-size: var(--font-size-control);
   margin: 8px 4px;
-  min-width: $size-control;
-  max-width: $size-control;
+  min-width: var(--space-control-m);
+  max-width: var(--space-control-m);
   overflow: hidden;
 
   transition: max-width 0.5s;
@@ -91,7 +89,7 @@ export default {
   transition: opacity 0.5s, flex 0.5s;
 }
 .wr-floating-search__btn {
-  border-radius: $size-control/2;
+  border-radius: calc(var(--space-control-m) / 2);
   transition: border-radius 0.25s;
 }
 
@@ -117,26 +115,26 @@ export default {
 }
 .wr-floating-search__btn {
   // padding: 8px 16px;
-  width: $size-control;
-  height: $size-control;
-  min-width: $size-control;
+  width: var(--space-control-m);
+  height: var(--space-control-m);
+  min-width: var(--space-control-m);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 2px;
-  color: hsl(218, 55%, 49%);
-  border: 1px solid transparent;
+  padding-top: 2px; // offset the search icon to look better
+  color: var(--color-interactive);
+  border: var(--line-weight-m) solid transparent;
   &:focus, &:hover {
     outline: none;
     background-color: hsla(215, 100%, 91%, 0.25);
-    border: 1px solid hsl(218, 64%, 75%);
+    border: var(--line-weight-m) solid var(--color-interactive);
   }
   &:disabled
   {
     outline: none;
     background-color: hsla(0, 0%, 96%, 0.25);
     color: rgb(121, 121, 121);
-    border: 1px solid transparent;
+    border: var(--line-weight-m) solid transparent;
     cursor: not-allowed;
   }
 }
@@ -154,14 +152,14 @@ export default {
   &:focus, &:hover {
     outline: none;
     background-color: hsla(215, 100%, 91%, 0.25);
-    border: 1px solid hsl(218, 64%, 75%);
+    border: var(--line-weight-m) solid var(--color-interactive);
   }
   &:disabled
   {
     outline: none;
     background-color: hsla(0, 0%, 96%, 0.25);
     color: rgb(121, 121, 121);
-    border: 1px solid transparent;
+    border: var(--line-weight-m) solid transparent;
     cursor: not-allowed;
     &::placeholder {
       color: rgb(171, 171, 171);
@@ -176,22 +174,22 @@ export default {
   text-align: left;
   font-size: 18px;
   color: hsl(218, 64%, 75%);
-  border: 1px solid transparent;
-  border-left: 1px solid hsl(220, 14%, 92%);
-  border-top-right-radius: $size-control/2;
-  border-bottom-right-radius: $size-control/2;
+  border: var(--line-weight-m) solid transparent;
+  border-left: var(--line-weight-m) solid hsl(220, 14%, 92%);
+  border-top-right-radius: calc(var(--space-control-m) / 2);
+  border-bottom-right-radius: calc(var(--space-control-m) / 2);
   &:focus, &:hover {
     outline: none;
     background-color: hsla(215, 100%, 91%, 0.25);
-    border: 1px solid hsl(218, 64%, 75%);
+    border: var(--line-weight-m) solid var(--color-interactive);
   }
   &:disabled
   {
     outline: none;
     background-color: hsla(0, 0%, 96%, 0.25);
     color: rgb(171, 171, 171);
-    border: 1px solid transparent;
-    border-left: 1px solid hsl(220, 14%, 92%);
+    border: var(--line-weight-m) solid transparent;
+    border-left: var(--line-weight-m) solid hsl(220, 14%, 92%);
     cursor: not-allowed;
   }
 }
