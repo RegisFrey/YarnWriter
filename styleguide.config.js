@@ -6,7 +6,7 @@ module.exports = {
   require: [
     path.join(__dirname, 'src/reset.css'),
     path.join(__dirname, 'src/main.scss'),
-    path.join(__dirname, 'src/styleguide.scss')
+    path.join(__dirname, './styleguide.scss')
   ],
   defaultExample: false,
   pagePerSection: true,
