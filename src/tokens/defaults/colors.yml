@@ -17,6 +17,10 @@ aliases:
     value: hsl(218, 64%, 75%)
   color_lightest_blue:
     value: hsl(218, 66%, 85%)
+  color_background_blue:
+    value: hsl(216, 38%, 95%)
+  color_background_inset_blue:
+    value: hsl(217, 35%, 87%)
 
 props:
 
@@ -34,18 +38,21 @@ props:
 
   # Basics
   color_bg:
-    value: rgb(237, 241, 247)
+    value: "{!color_background_blue}"
     comment: Background element
   color_bg_inset:
-    value: rgb(211, 220, 234)
+    value: "{!color_background_inset_blue}"
     comment: Background inset parts, e.g. the holes in the pegboard
 
   color_fg:
     value: "{!color_white}"
     comment: Foreground UI elements, e.g. panels.
   color_fg_border:
-    value: "{!color_grey}"
+    value: "{!color_background_inset_blue}"
     comment: Foreground UI element borders, e.g. panel dividers.
+  color_fg_interactive_tint:
+    value: rgb(232, 239, 250)
+    comment: "This should be dynamic: color_fg + 10% of color_interactive."
 
   color_fg_text:
     value: "{!color_off_black}"

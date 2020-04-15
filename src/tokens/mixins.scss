@@ -12,21 +12,24 @@
 
 /* Interactive Elements */
 
-@mixin control-base () {
+$control-default-line-weight: var(--line-weight-s);
+
+@mixin control-base ($line-weight: $control-default-line-weight) {
     background-color: var(--color-fg);
+    border: $line-weight solid transparent;
     color: var(--color-interactive);
-    border: var(--line-weight-m) solid transparent;
+    font-size: var(--font-size-control);
 }
 
-@mixin control-highlight () {
-    // tint bkg? background-color: var(--color-fg + 10% --color-interactive);
-    border: var(--line-weight-m) solid var(--color-interactive);
+@mixin control-highlighted ($line-weight: $control-default-line-weight) {
+    background-color: var(--color-fg-interactive-tint);
+    border: $line-weight solid var(--color-interactive);
     outline: none;
 }
 
-@mixin control-disabled () {
-    // tint bkg? background-color: var(--color-fg + 10% --color-interactive);
-    border: var(--line-weight-m) solid transparent;
+@mixin control-disabled ($line-weight: $control-default-line-weight) {
+    background-color: var(--color-fg);
+    border: $line-weight solid transparent;
     color: var(--color-interactive-disabled);
     cursor: not-allowed;
     outline: none;

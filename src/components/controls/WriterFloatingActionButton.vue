@@ -31,21 +31,20 @@ export default {
   align-items: center;
   justify-content: center;
 
-  background-color: var(--color-fg);
-  @include shadow;
-
   border-radius: calc(var(--space-control-m) / 2);
   height: var(--space-control-m);
   width: var(--space-control-m);
-  font-size: var(--font-size-control);
-  color: var(--color-interactive);
   padding: 4px;
   margin: 8px 4px;
 
-  border: var(--line-weight-m) solid transparent;
-  &:focus {
-    border: var(--line-weight-m) solid var(--color-interactive);
-    outline: none;
+  @include control-base(var(--line-weight-m));
+  @include shadow;
+
+  &:hover, &:focus {
+    @include control-highlighted(var(--line-weight-m));
+  }
+  &:disabled {
+    @include control-disabled;
   }
   svg {
     display: block; // icons should position correctly, otherwise they are inline

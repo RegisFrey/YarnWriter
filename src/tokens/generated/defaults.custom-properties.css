@@ -11,7 +11,7 @@
   /* YarnSpinner brand color for lighter background fill */
   --color-identity-bg: rgb(198, 225, 158);
   /* Foreground UI element borders, e.g. panel dividers. */
-  --color-fg-border: rgb(111, 111, 111);
+  --color-fg-border: rgb(210, 219, 233);
   /* Default text color. */
   --color-fg-text: rgb(46, 46, 46);
   /* YarnSpinner brand color for mid tone border */
@@ -22,6 +22,8 @@
   --color-shadow-dark: rgba(54, 54, 80, 0.4);
   /* YarnSpinner brand color for logo lines and text */
   --color-identity: rgb(59, 136, 96);
+  /* This should be dynamic: color_fg + 10% of color_interactive. */
+  --color-fg-interactive-tint: rgb(232, 239, 250);
   /* Shadow for regular raised elements. */
   --color-shadow: rgba(46, 46, 66, 0.24);
   /* Foreground UI elements, e.g. panels. */
@@ -29,7 +31,7 @@
   /* Interactive controls meant to invite interaction but also be less emphasized, e.g. placeholder, secondary controls. */
   --color-interactive-light: rgb(150, 180, 232);
   /* Background inset parts, e.g. the holes in the pegboard */
-  --color-bg-inset: rgb(211, 220, 234);
+  --color-bg-inset: rgb(210, 219, 233);
   --space-gap-l: 16px;
   --space-gap-m: 8px;
   --space-xl: 128px;
@@ -55,7 +57,9 @@
   --line-height-base: 1.4;
   --line-height-wide: 2;
   --font-family-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
+  --line-weight-s: 1px;
   --line-weight-m: 2px;
+  --line-weight-l: 4px;
   --border-radius-s: 4px;
   --border-radius-m: 8px;
   --border-radius-l: 16px;

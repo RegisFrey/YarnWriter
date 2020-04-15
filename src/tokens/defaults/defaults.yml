@@ -6,10 +6,19 @@ props:
     type: property
     category: font-family
 
+  line_weight_s:
+    value: 1px
+    type: number
+    category: sizing
   line_weight_m:
     value: 2px
     type: number
     category: sizing
+  line_weight_l:
+    value: 4px
+    type: number
+    category: sizing
+
 
   border_radius_s:
     value: 4px

@@ -105,16 +105,13 @@ export default {
   .wr-floating-search__input {
     opacity: 1;
     flex: 3;
-    // transform: scaleX(1);
   }
   .wr-floating-search__filter {
     opacity: 1;
     flex: 1;
-    // transform: scaleX(1);
   }
 }
 .wr-floating-search__btn {
-  // padding: 8px 16px;
   width: var(--space-control-m);
   height: var(--space-control-m);
   min-width: var(--space-control-m);
@@ -122,20 +119,15 @@ export default {
   align-items: center;
   justify-content: center;
   padding-top: 2px; // offset the search icon to look better
-  color: var(--color-interactive);
-  border: var(--line-weight-m) solid transparent;
+
+  @include control-base(var(--line-weight-m));
+
   &:focus, &:hover {
-    outline: none;
-    background-color: hsla(215, 100%, 91%, 0.25);
-    border: var(--line-weight-m) solid var(--color-interactive);
+    @include control-highlighted(var(--line-weight-m));
   }
   &:disabled
   {
-    outline: none;
-    background-color: hsla(0, 0%, 96%, 0.25);
-    color: rgb(121, 121, 121);
-    border: var(--line-weight-m) solid transparent;
-    cursor: not-allowed;
+    @include control-disabled(var(--line-weight-m));
   }
 }
 .wr-floating-search__input {
@@ -143,29 +135,27 @@ export default {
   padding: 8px;
   font-size: 18px;
   display: block;
-  background-color: transparent;
-  border: none;
-  border: 1px solid transparent;
+
+  @include control-base;
+  color: var(--color-fg-text);
+
   &::placeholder {
-    color: hsl(218, 64%, 75%);
+    color: var(--color-interactive-light);
   }
   &:focus, &:hover {
-    outline: none;
-    background-color: hsla(215, 100%, 91%, 0.25);
-    border: var(--line-weight-m) solid var(--color-interactive);
+    @include control-highlighted;
   }
   &:disabled
   {
-    outline: none;
-    background-color: hsla(0, 0%, 96%, 0.25);
-    color: rgb(121, 121, 121);
-    border: var(--line-weight-m) solid transparent;
-    cursor: not-allowed;
+    @include control-disabled;
     &::placeholder {
-      color: rgb(171, 171, 171);
+      color: var(--color_interactive_disabled);
     }
   }
 }
+
+$filter-left-border: var(--line-weight-s) solid hsl(220, 14%, 92%);
+
 .wr-floating-search__filter {
   min-width: 100px;
   // flex: 1;
@@ -173,24 +163,19 @@ export default {
   // margin-left: 8px;
   text-align: left;
   font-size: 18px;
-  color: hsl(218, 64%, 75%);
-  border: var(--line-weight-m) solid transparent;
-  border-left: var(--line-weight-m) solid hsl(220, 14%, 92%);
+  color: var(--color-interactive-light);
+  @include control-base;
+  border-left: $filter-left-border;
   border-top-right-radius: calc(var(--space-control-m) / 2);
   border-bottom-right-radius: calc(var(--space-control-m) / 2);
+
   &:focus, &:hover {
-    outline: none;
-    background-color: hsla(215, 100%, 91%, 0.25);
-    border: var(--line-weight-m) solid var(--color-interactive);
+    @include control-highlighted;
   }
   &:disabled
   {
-    outline: none;
-    background-color: hsla(0, 0%, 96%, 0.25);
-    color: rgb(171, 171, 171);
-    border: var(--line-weight-m) solid transparent;
-    border-left: var(--line-weight-m) solid hsl(220, 14%, 92%);
-    cursor: not-allowed;
+    @include control-disabled;
+    border-left: $filter-left-border;
   }
 }
 .sr-only {

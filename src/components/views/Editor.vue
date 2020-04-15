@@ -97,6 +97,7 @@ export default Vue.extend({
   overflow: hidden;
   background-color: var(--color-fg);
   @include shadow;
+  /* TODO: Replace this with a WriterPanel component */
 }
 
 .wr-editor__header {
@@ -109,28 +110,29 @@ export default Vue.extend({
   flex: 1;
   min-height: 40px; // needed to allow flex to collapse
   .minimap {
-    border-left: 1px solid var(--color-bg);
+    border-left: var(--line-weight-s) solid var(--color-fg-border);
   }
 }
 
 $editor-left-margin: 62px; // 26px; // .monaco-editor .margin
 $editor-left-margin-numbers: 36px; // .monaco-editor .margin-view-overlays .line-numbers
 
-$header-bottom-border-size: 1px;
+$header-bottom-border-size: var(--line-weight-s);
 
 .wr-editor__header__main {
   // padding-left: $editor-left-margin;
   display: flex;
-  border-bottom: $header-bottom-border-size solid var(--color-bg-inset);
+  border-bottom: $header-bottom-border-size solid var(--color-fg-border);
   button, input {
-    background: transparent;
-    border: $header-bottom-border-size solid transparent;
     margin-bottom: -$header-bottom-border-size;
+    @include control-base;
+
     &:focus, &:hover {
-      outline: none;
-      background-color: hsla(215, 100%, 91%, 0.25);
-      // border-bottom: 1px solid hsl(218, 64%, 75%);
-      border: $header-bottom-border-size solid hsl(218, 64%, 75%);
+      @include control-highlighted;
+    }
+
+    &:disabled {
+      @include control-disabled;
     }
   }
 }
@@ -141,7 +143,6 @@ $header-bottom-border-size: 1px;
   align-content: flex-end;
   border-top-left-radius: 6px;
   margin-right: -1px;
-  color: hsl(218, 55%, 49%);
 }
 .wr-editor__title {
   flex: 1;
@@ -155,12 +156,11 @@ $header-bottom-border-size: 1px;
   padding: 0 8px;
   border-top-right-radius: 6px;
   margin-left: -1px;
-  color: hsl(218, 55%, 49%);
 }
 
 .wr-editor__tags {
   // padding-left: $editor-left-margin-numbers + 16px - 8px;
-  border-top: $header-bottom-border-size solid var(--color-bg-inset);
+  border-top: $header-bottom-border-size solid var(--color-fg-border);
   flex: 1;
   flex-grow: 0;
   flex-shrink: 0;
@@ -168,16 +168,15 @@ $header-bottom-border-size: 1px;
   .vue-tags-input {
     flex: 1;
     max-width: none;
-    background-color: transparent;
-    border-color: transparent;
     margin-top: -1px;
-    border: 1px solid transparent;
+
+    @include control-base;
+
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
+
     &.ti-focus {
-      outline: none;
-      border: 1px solid hsl(218, 64%, 75%);
-      background-color: hsla(215, 100%, 91%, 0.25);
+      @include control-highlighted;
     }
   }
   .ti-input, .ti-new-tag-input-wrapper {
