@@ -19,7 +19,6 @@
 import Vue from 'vue'
 import IconTrash from 'vue-material-design-icons/TrashCanOutline.vue'
 import IconDots from 'vue-material-design-icons/DotsVertical.vue'
-
 import WriterTag from '@/components/formatting/WriterTag.vue'
 
 /**

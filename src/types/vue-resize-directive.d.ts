@@ -1,1 +1,1 @@
-declare module 'vue-resize-directive';
+declare module 'vue-resize-directive'

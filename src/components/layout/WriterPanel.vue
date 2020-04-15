@@ -1,5 +1,5 @@
 <template>
-  <div class="wr-placeholder">
+  <div class="wr-panel">
     hello
   </div>
 </template>
@@ -8,14 +8,20 @@
 import Vue from 'vue'
 
 /**
- * Nodes to organize story chunks, visualize linkages
+ * Container for UI over Workspace
  */
 export default Vue.extend({
   props: {}
 })
 </script>
 
-<style>
+<style lang="scss">
+@import '~@/tokens/mixins.scss';
+
+.wr-panel {
+  background-color: var(--color-fg);
+  @include shadow;
+}
 </style>
 
 <docs>

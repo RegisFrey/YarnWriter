@@ -98,6 +98,19 @@ export default Vue.extend({
 <style lang="scss">
 @import '~@/tokens/mixins.scss';
 
+/* Make horizontal scrollbar, decorations overview ruler and vertical scrollbar arrows opaque * /
+.monaco-editor .monaco-scrollable-element .scrollbar.horizontal,
+.monaco-editor .decorationsOverviewRuler,
+.monaco-editor .monaco-scrollable-element .scrollbar.vertical .arrow-background {
+  background: rgba(var(--color-interactive), 0.5);
+}
+*/
+/* Make vertical scrollbar transparent to allow decorations overview ruler to be visible * /
+.monaco-editor .monaco-scrollable-element .scrollbar.vertical {
+  background: rgba(var(--color-interactive), 0.5);
+}
+*/
+
 .wr-editor {
   display: flex;
   flex-direction: column;
