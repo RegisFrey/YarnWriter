@@ -31,6 +31,7 @@ import { setupMonacoEditor } from '@/editor/monaco' // not using vue-monaco, ins
 import * as monaco from 'monaco-editor'
 import IconMore from 'vue-material-design-icons/DotsVertical.vue'
 import IconClose from 'vue-material-design-icons/Close.vue'
+import defaultThemeLight from '@/tokens/default.vscode'
 
 /**
  * Editor to edit node content or whole story file
@@ -76,13 +77,20 @@ export default Vue.extend({
     }
   },
   async mounted () {
+    monaco.editor.defineTheme(defaultThemeLight.name, defaultThemeLight.theme)
+    monaco.editor.setTheme(defaultThemeLight.name)
     const monacoOptions: monaco.editor.IStandaloneEditorConstructionOptions = {
       // lineNumbers: 'off',
       // minimap: { enabled: false }
       // turn off when text all fits on screen, when under X width, and by global setting
       // local editor settings like hard wrapping per window
-    };
-    (this.$options as any).editor = await setupMonacoEditor((this.$refs.monaco as HTMLElement), this.value, monacoOptions) // eslint-disable-line
+    }
+    const editor = await setupMonacoEditor( // eslint-disable-line
+      (this.$refs.monaco as HTMLElement),
+      this.value,
+      monacoOptions
+    )
+    // ;(this.$options as any).editor = editor; // eslint-disable-line
   }
 })
 </script>

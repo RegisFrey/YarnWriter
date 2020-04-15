@@ -66,7 +66,7 @@ export async function initalizeMonaco () {
 }
 
 export async function setupMonacoEditor (element: HTMLElement, value: string, options?: monaco.editor.IStandaloneEditorConstructionOptions): Promise<monaco.editor.IStandaloneCodeEditor> {
-  initalizeMonaco()
+  await initalizeMonaco()
   return monaco.editor.create(
     element,
     Object.assign(

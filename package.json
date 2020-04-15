@@ -19,10 +19,11 @@
     "styleguide": "vue-cli-service styleguidist",
     "styleguide:build": "vue-cli-service styleguidist:build",
     "## TOKENS": "",
-    "tokens": "theo ./src/tokens/defaults/defaults.yml --transform web --format custom-properties.css --dest ./src/tokens/generated"
+    "tokens": "theo ./src/tokens/defaults/defaults.yml --transform web --format custom-properties.css,module.js --dest ./src/tokens/generated"
   },
   "dependencies": {
     "@johmun/vue-tags-input": "^2.1.0",
+    "color-string": "^1.5.3",
     "core-js": "3",
     "dayjs": "^1.8.23",
     "direct-vuex": "^0.10.4",
