@@ -31,7 +31,8 @@ import { setupMonacoEditor } from '@/editor/monaco' // not using vue-monaco, ins
 import * as monaco from 'monaco-editor'
 import IconMore from 'vue-material-design-icons/DotsVertical.vue'
 import IconClose from 'vue-material-design-icons/Close.vue'
-import defaultThemeLight from '@/tokens/default.vscode'
+// import defaultThemeLight from '@/tokens/default.vscode'
+// import defaultLightTheme from '@/themes/generated/default.json'
 
 /**
  * Editor to edit node content or whole story file
@@ -61,12 +62,17 @@ export default Vue.extend({
           // lineDecorationsWidth: 10px
         }
       }
+    },
+    theme: {
+      type: Object,
+      default: null
     }
   },
   data () {
     return {
       tag: '',
-      tags: []
+      tags: [],
+      registeredThemes: []
     }
   },
   methods: {
@@ -74,11 +80,27 @@ export default Vue.extend({
       if ('editor' in this.$options) {
         (this.$options as any).editor.layout() // eslint-disable-line
       }
+    },
+    setupTheme (theme: any) { // eslint-disable-line
+      console.log('setup theme')
+      if (!(theme.name in this.registeredThemes)) {
+        monaco.editor.defineTheme(theme.name, theme.theme)
+        this.registeredThemes.push()
+      }
+      monaco.editor.setTheme(theme.name)
+    }
+  },
+  watch: {
+    theme: {
+      handler (newTheme) {
+        if (newTheme) {
+          this.setupTheme(newTheme)
+        }
+      },
+      immediate: true
     }
   },
   async mounted () {
-    monaco.editor.defineTheme(defaultThemeLight.name, defaultThemeLight.theme)
-    monaco.editor.setTheme(defaultThemeLight.name)
     const monacoOptions: monaco.editor.IStandaloneEditorConstructionOptions = {
       // lineNumbers: 'off',
       // minimap: { enabled: false }
@@ -90,26 +112,12 @@ export default Vue.extend({
       this.value,
       monacoOptions
     )
-    // ;(this.$options as any).editor = editor; // eslint-disable-line
   }
 })
 </script>
 
 <style lang="scss">
-@import '~@/tokens/mixins.scss';
-
-/* Make horizontal scrollbar, decorations overview ruler and vertical scrollbar arrows opaque * /
-.monaco-editor .monaco-scrollable-element .scrollbar.horizontal,
-.monaco-editor .decorationsOverviewRuler,
-.monaco-editor .monaco-scrollable-element .scrollbar.vertical .arrow-background {
-  background: rgba(var(--color-interactive), 0.5);
-}
-*/
-/* Make vertical scrollbar transparent to allow decorations overview ruler to be visible * /
-.monaco-editor .monaco-scrollable-element .scrollbar.vertical {
-  background: rgba(var(--color-interactive), 0.5);
-}
-*/
+@import '~@/mixins.scss';
 
 .wr-editor {
   display: flex;
@@ -163,7 +171,6 @@ $header-bottom-border-size: var(--line-weight-s);
   padding-right: 8px;
   align-content: flex-end;
   border-top-left-radius: 6px;
-  margin-right: -1px;
 }
 .wr-editor__title {
   flex: 1;
@@ -176,7 +183,6 @@ $header-bottom-border-size: var(--line-weight-s);
 .wr-editor__btn-close {
   padding: 0 8px;
   border-top-right-radius: 6px;
-  margin-left: -1px;
 }
 
 .wr-editor__tags {
@@ -189,7 +195,6 @@ $header-bottom-border-size: var(--line-weight-s);
   .vue-tags-input {
     flex: 1;
     max-width: none;
-    margin-top: -1px;
 
     @include control-base;
 
@@ -239,9 +244,9 @@ $header-bottom-border-size: var(--line-weight-s);
 ```js
 import placeholder from '@/editor/sample.yarn'
 
-<WriterThemeContext show-toggle>
+<WriterThemeContext show-toggle v-slot:default="themeContext">
   <WriterPegboard style="height: 400px; padding: 8px; display: flex; flex-direction: column;">
-    <Editor title="fight scene" v-bind:value="placeholder" style="flex: 1;"/>
+    <Editor title="fight scene" v-bind:value="placeholder" v-bind:theme="themeContext.theme.editorTheme" style="flex: 1;" />
   </WriterPegboard>
 </WriterThemeContext>
 ```

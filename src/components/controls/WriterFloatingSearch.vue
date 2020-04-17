@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~@/tokens/mixins.scss';
+@import '~@/mixins.scss';
 
 .wr-floating-search {
   display: flex;
@@ -115,6 +115,7 @@ export default {
   width: var(--space-control-m);
   height: var(--space-control-m);
   min-width: var(--space-control-m);
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,13 +155,11 @@ export default {
   }
 }
 
-$filter-left-border: var(--line-weight-s) solid hsl(220, 14%, 92%);
+$filter-left-border: var(--line-weight-s) solid var(--color-fg-border);
 
 .wr-floating-search__filter {
   min-width: 100px;
-  // flex: 1;
   padding: 8px 16px;
-  // margin-left: 8px;
   text-align: left;
   font-size: 18px;
   color: var(--color-interactive-light);

@@ -1,0 +1,87 @@
+global:
+  type: color
+  category: color
+
+aliases:
+  color_black_bg:
+    value: rgb(40, 40, 40)
+  color_black_bg_inset:
+    value: rgb(12, 12, 12)
+  
+  color_black_fg:
+    value: rgb(60, 60, 65)
+  color_black_fg_brighter:
+    value: rgb(75, 75, 80)
+
+  color_white_text:
+    value: rgb(240, 240, 250)
+
+  color_grey:
+    value: rgb(111, 111, 111)
+  
+  color_dark_blue:
+    value: hsl(218, 55%, 49%)
+  color_light_blue:
+    value: hsl(218, 64%, 75%)
+  color_lightest_blue:
+    value: hsl(218, 66%, 85%)
+
+props:
+
+  # Yarn Writer Colors
+  # Primarily for Welcome and Guide
+  color_identity:
+    value: "#3B8860"
+    comment: YarnSpinner brand color for logo lines and text
+  color_identity_bg: 
+    value: "#C6E19E" #C5E29B
+    comment: YarnSpinner brand color for lighter background fill
+  color_identity_border:
+    value: "#92B491"
+    comment: YarnSpinner brand color for mid tone border
+
+  # Basics
+  color_bg:
+    value: "{!color_black_bg}"
+    comment: Background element
+  color_bg_inset:
+    value: "{!color_black_bg_inset}"
+    comment: Background inset parts, e.g. the holes in the pegboard
+
+  color_fg:
+    value: "{!color_black_fg}"
+    comment: Foreground UI elements, e.g. panels.
+  color_fg_border:
+    value: "{!color_black_bg_inset}"
+    comment: Foreground UI element borders, e.g. panel dividers.
+  color_fg_interactive_tint:
+    value: rgb(40, 44, 62)
+    comment: "This should be dynamic: color_fg + 10% of color_interactive."
+
+  color_fg_text:
+    value: "{!color_white_text}"
+    comment: Default text color.
+  color_fg_text_light:
+    value: "{!color_grey}"
+    comment: Demphasized text.
+
+  color_shadow:
+    value: "rgba(0, 0, 15, 0.6)"
+    comment: Shadow for regular raised elements.
+  color_shadow_dark:
+    value: "rgba(0, 0, 15, 0.8)"
+    comment: Shadow for higher raised elements, like focused nodes.
+
+  # Controls
+  color_interactive:
+    value: "{!color_dark_blue}"
+    comment: Interactive controls. Button icons. Link text. Focus outlines and other interactive indicators.
+  color_interactive_focus_bg:
+    value: "{!color_lightest_blue}"
+    comment: Background of interactive elements when focused.
+  color_interactive_light:
+    value: "{!color_light_blue}"
+    comment: Interactive controls meant to invite interaction but also be less emphasized, e.g. placeholder, secondary controls.
+  color_interactive_disabled:
+    value: "{!color_grey}"
+    comment: Disabled controls.

@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~@/tokens/mixins.scss';
+@import '~@/mixins.scss';
 
 .wr-btn-fab {
   display: flex;

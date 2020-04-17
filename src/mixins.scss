@@ -39,3 +39,9 @@ $control-default-line-weight: var(--line-weight-s);
   Text styles are in src/components/formatting/WriterText.vue
   But could be represented here as mixins and imported there.
 */
+@mixin text-base {
+    font-family: var(--font-family-system);
+    color: var(--color-fg-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

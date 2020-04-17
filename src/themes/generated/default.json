@@ -1,0 +1,82 @@
+{
+  "name": "writer-light",
+  "tokens": {
+    "colorBg": "rgb(237, 241, 247)",
+    "colorInteractiveFocusBg": "rgb(192, 210, 242)",
+    "colorInteractive": "rgb(56, 107, 194)",
+    "colorFgTextLight": "rgb(111, 111, 111)",
+    "colorIdentityBg": "rgb(198, 225, 158)",
+    "colorFgBorder": "rgb(210, 219, 233)",
+    "colorFgText": "rgb(46, 46, 46)",
+    "colorIdentityBorder": "rgb(146, 180, 145)",
+    "colorInteractiveDisabled": "rgb(111, 111, 111)",
+    "colorShadowDark": "rgba(54, 54, 80, 0.4)",
+    "colorIdentity": "rgb(59, 136, 96)",
+    "colorFgInteractiveTint": "rgb(232, 239, 250)",
+    "colorShadow": "rgba(46, 46, 66, 0.24)",
+    "colorFg": "rgb(255, 255, 255)",
+    "colorInteractiveLight": "rgb(150, 180, 232)",
+    "colorBgInset": "rgb(210, 219, 233)",
+    "spaceGapL": "16px",
+    "spaceGapM": "8px",
+    "spaceXl": "128px",
+    "spaceGapS": "4px",
+    "spaceControlL": "64px",
+    "spaceControlM": "48px",
+    "spaceL": "64px",
+    "spaceXs": "8px",
+    "spaceM": "32px",
+    "spaceControlXs": "16px",
+    "spaceGapXl": "32px",
+    "spaceControlS": "24px",
+    "spaceS": "16px",
+    "spaceGapXs": "2px",
+    "fontSizeXs": "12px",
+    "fontSizeS": "16px",
+    "fontSizeM": "18px",
+    "fontSizeL": "21px",
+    "fontSizeXl": "32px",
+    "fontSizeControl": "21px",
+    "lineHeightMatch": 1,
+    "lineHeightTight": 1.2,
+    "lineHeightBase": 1.4,
+    "lineHeightWide": 2,
+    "fontFamilySystem": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";",
+    "lineWeightS": "1px",
+    "lineWeightM": "2px",
+    "lineWeightL": "4px",
+    "borderRadiusS": "4px",
+    "borderRadiusM": "8px",
+    "borderRadiusL": "16px"
+  },
+  "editorTheme": {
+    "name": "vs-writer-light",
+    "theme": {
+      "base": "vs",
+      "inherit": true,
+      "rules": [
+        {
+          "token": "",
+          "background": "#EDF1F7"
+        }
+      ],
+      "colors": {
+        "editor.foreground": "#FFFFFF",
+        "editor.background": "#FFFFFF",
+        "editorCursor.foreground": "#386BC2",
+        "editor.lineHighlightBackground": "#E8EFFA",
+        "editorLineNumber.foreground": "#96B4E8",
+        "editor.selectionBackground": "#E8EFFA",
+        "editor.inactiveSelectionBackground": "#6F6F6F",
+        "button.foreground": "#386BC2",
+        "button.background": "#FFFFFF",
+        "editorWidget.background": "#FFFFFF",
+        "input.background": "#FFFFFF",
+        "input.foreground": "#386BC2",
+        "scrollbarSlider.background": "#96B4E888",
+        "scrollbarSlider.hoverBackground": "#386BC288",
+        "scrollbarSlider.activeBackground": "#386BC288"
+      }
+    }
+  }
+}

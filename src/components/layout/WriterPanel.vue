@@ -16,7 +16,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-@import '~@/tokens/mixins.scss';
+@import '~@/mixins.scss';
 
 .wr-panel {
   background-color: var(--color-fg);
