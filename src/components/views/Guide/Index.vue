@@ -1,10 +1,16 @@
 <template>
   <div class="panel-guide">
-    <h1>Settings</h1>
-
-    <h2>Theme</h2>
-
-    <h2>Keyboard</h2>
+    <header class="panel-guide__content">
+      <button>⇠ Back</button>
+      <input type="search" placeholder="Search" />
+    </header>
+    <div class="panel-guide__content">
+      <!--
+        Populate with HTML / Markdown content.
+        Some coppied from YarnSpinner docs.
+        Some authored here as Markdown
+      -->
+    </div>
   </div>
 </template>
 
