@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { createDirectStore } from 'direct-vuex'
-import windows from './windows'
+import documents from '@/store/documents'
 
 Vue.use(Vuex)
 
@@ -14,10 +14,13 @@ const {
 } = createDirectStore({
   // … store implementation here …
   state: {
-    inElectron: ('process' in global && 'versions' in global.process && 'electron' in global.process.versions)
+    inElectron: ('process' in global && 'versions' in global.process && 'electron' in global.process.versions),
+    showing: {
+      welcome: true,
+    }
   },
   modules: {
-    windows
+    documents
   }
 })
 
